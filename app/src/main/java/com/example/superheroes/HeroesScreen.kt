@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -31,9 +32,11 @@ import com.example.superheroes.ui.theme.SuperheroesTheme
 
 @Composable
 fun HeroesList(
+    contentPadding: PaddingValues,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
+        contentPadding = contentPadding,
         modifier = modifier
     ) {
         items(heroes) {
@@ -118,18 +121,18 @@ fun HeroInfor(
     }
 }
 
-@Preview
-@Composable
-fun HeroItemPreview() {
-    SuperheroesTheme(darkTheme = false) {
-        HeroesList()
-    }
-}
-
-@Preview
-@Composable
-fun HeroItemDarkPreview() {
-    SuperheroesTheme(darkTheme = true) {
-        HeroesList()
-    }
-}
+//@Preview
+//@Composable
+//fun HeroItemPreview() {
+//    SuperheroesTheme(darkTheme = false) {
+//        HeroesList()
+//    }
+//}
+//
+//@Preview
+//@Composable
+//fun HeroItemDarkPreview() {
+//    SuperheroesTheme(darkTheme = true) {
+//        HeroesList()
+//    }
+//}
